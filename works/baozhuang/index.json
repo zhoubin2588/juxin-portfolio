@@ -1,18 +1,22 @@
 [
   {
-    "src": "/works/baozhuang/01.jpg",
-    "alt": "成功案例"
+    "src": "/works/baozhuang/01.webp",
+    "alt": "成功案例",
+    "full": "/works/baozhuang/01-full.webp"
   },
   {
-    "src": "/works/baozhuang/02.jpg",
-    "alt": "成功案例"
+    "src": "/works/baozhuang/02.webp",
+    "alt": "成功案例",
+    "full": "/works/baozhuang/02-full.webp"
   },
   {
-    "src": "/works/baozhuang/03.jpg",
-    "alt": "成功案例"
+    "src": "/works/baozhuang/03.webp",
+    "alt": "成功案例",
+    "full": "/works/baozhuang/03-full.webp"
   },
   {
-    "src": "/works/baozhuang/04.jpg",
-    "alt": "成功案例"
+    "src": "/works/baozhuang/04.webp",
+    "alt": "成功案例",
+    "full": "/works/baozhuang/04-full.webp"
   }
 ]
