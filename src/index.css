@@ -12,17 +12,6 @@
   --font-sans: 'Noto Sans SC', sans-serif;
 }
 
-@utility max-w-container {
-  max-width: 1280px;
-}
-
-@utility card-hover {
-  transition: all 0.3s ease;
-  &:hover {
-    transform: translateY(-2px);
-  }
-}
-
 @utility fade-in {
   animation: fadeIn 0.6s ease forwards;
 }
@@ -50,13 +39,6 @@
 @utility stagger-5 {
   animation-delay: 0.5s;
   opacity: 0;
-}
-
-@utility text-gradient {
-  background: linear-gradient(135deg, #d4a853 0%, #e8c06a 50%, #d4a853 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 * {
@@ -110,13 +92,3 @@ body {
   }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

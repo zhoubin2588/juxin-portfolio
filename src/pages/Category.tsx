@@ -1,31 +1,28 @@
+import NotFound from './NotFound';
+import { containerStyle } from '../styles';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { categories, works } from '../data/works';
+import { categories, loadWorks, Work } from '../data/works';
 import WorkGallery from '../components/WorkGallery';
-
-const containerStyle: React.CSSProperties = { maxWidth: 1280, margin: '0 auto' };
 
 export default function Category() {
   const { slug } = useParams<{ slug: string }>();
   const category = categories.find((c) => c.slug === slug);
+  const [works, setWorks] = useState<Work[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!slug) return;
+    setLoading(true);
+    loadWorks(slug).then((data) => {
+      setWorks(data);
+      setLoading(false);
+    });
+  }, [slug]);
 
   if (!category) {
-    return (
-      <main className="flex min-h-screen items-center justify-center" style={{ paddingTop: 64 }}>
-        <div className="text-center">
-          <p className="mb-4 text-6xl font-serif font-bold text-accent/30">404</p>
-          <p className="mb-6 text-muted">分类不存在</p>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-lg border border-accent/30 px-5 py-2.5 text-sm text-accent transition-colors hover:bg-accent/10"
-          >
-            返回首页
-          </Link>
-        </div>
-      </main>
-    );
+    return <NotFound />;
   }
-
-  const categoryWorks = works.filter((w) => w.category === slug);
 
   return (
     <main className="min-h-screen">
@@ -54,14 +51,23 @@ export default function Category() {
                 {category.name}
               </h1>
               <p className="text-sm text-muted">{category.description}</p>
-              <p className="mt-2 text-xs text-muted/50">
-                共 {categoryWorks.length} 个作品
-              </p>
+              {!loading && (
+                <p className="mt-2 text-xs text-muted/50">
+                  共 {works.length} 个作品
+                </p>
+              )}
             </div>
           </div>
 
+          {/* Loading State */}
+          {loading && (
+            <div className="flex items-center justify-center py-20">
+              <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent/20 border-t-accent"></div>
+            </div>
+          )}
+
           {/* Works Grid */}
-          <WorkGallery works={categoryWorks} />
+          {!loading && <WorkGallery works={works} />}
         </div>
       </section>
     </main>

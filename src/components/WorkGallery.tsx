@@ -1,3 +1,4 @@
+import { staggerClasses } from '../styles';
 import { useState } from 'react';
 import { Work } from '../data/works';
 import Lightbox from './Lightbox';
@@ -30,7 +31,7 @@ export default function WorkGallery({ works }: WorkGalleryProps) {
           <button
             key={work.id}
             onClick={() => setSelectedWork(work)}
-            className={`fade-in stagger-${Math.min(index % 5 + 1, 5)} group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg border border-border/30 bg-card/50 transition-all duration-500 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5`}
+            className={`fade-in ${staggerClasses[index % 5]} group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg border border-border/30 bg-card/50 transition-all duration-500 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5`}
           >
             <img
               src={work.image}

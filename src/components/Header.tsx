@@ -1,3 +1,4 @@
+import { containerStyle } from '../styles';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
@@ -6,7 +7,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-bg/80 backdrop-blur-xl">
-      <div className="flex h-16 items-center justify-between px-6" style={{ maxWidth: 1280, margin: '0 auto' }}>
+      <div className="flex h-16 items-center justify-between px-6" style={containerStyle}>
         <Link to="/" className="group flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded bg-accent/10 text-sm font-bold text-accent transition-colors group-hover:bg-accent/20">
             JX

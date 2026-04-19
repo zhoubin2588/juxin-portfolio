@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Category from './pages/Category';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/category/:slug" element={<Category />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />

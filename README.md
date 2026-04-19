@@ -1,16 +1,31 @@
-# React + Vite
+# 聚鑫时代图文广告 - 作品集网站
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+专业平面设计与制作服务展示网站。
 
-Currently, two official plugins are available:
+## 技术栈
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 18 + TypeScript
+- Vite 6
+- Tailwind CSS 4
+- React Router 7
 
-## React Compiler
+## 本地开发
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## 添加作品
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. 将图片放入 `public/works/对应分类/` 目录
+2. 运行 `node generate-works.js` 生成索引
+3. 重新构建 `npm run build`
+
+## 构建
+
+```bash
+npm run build
+```
+
+产物输出到 `dist/` 目录，可部署到 Cloudflare Pages 等静态托管平台。
