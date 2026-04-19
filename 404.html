@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>聚鑫时代图文广告</title>
     <script>
+      // 自定义域名时不需要 basename，GitHub Pages 域名时需要
+      var isCustomDomain = window.location.hostname !== 'zhoubin2588.github.io';
+      var basename = isCustomDomain ? '' : '/juxin-portfolio';
       var path = window.location.pathname;
-      var basename = '/juxin-portfolio';
-      if (path.indexOf(basename) === 0) {
+
+      // 如果是 GitHub Pages 域名，去掉 basename 前缀
+      if (!isCustomDomain && path.indexOf(basename) === 0) {
         path = path.substring(basename.length);
       }
+
+      // 存储相对路径
       sessionStorage.redirect = path + window.location.search + window.location.hash;
+
+      // 跳转到首页
       window.location.replace(
         window.location.protocol + '//' + window.location.host + basename + '/'
       );

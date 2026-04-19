@@ -14,7 +14,8 @@
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect) {
-          var basename = '/juxin-portfolio';
+          var isCustomDomain = window.location.hostname !== 'zhoubin2588.github.io';
+          var basename = isCustomDomain ? '' : '/juxin-portfolio';
           window.history.replaceState(null, null, basename + redirect);
         }
       })();
