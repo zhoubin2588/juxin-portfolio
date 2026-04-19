@@ -56,7 +56,7 @@ export default function WorkGallery({ works }: WorkGalleryProps) {
 
       {selectedWork && (
         <Lightbox
-          image={selectedWork.image}
+          image={selectedWork.full || selectedWork.image}
           title={selectedWork.title}
           onClose={() => setSelectedWork(null)}
         />

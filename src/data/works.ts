@@ -9,6 +9,7 @@ export interface Work {
   title: string;
   category: string;
   image: string;
+  full?: string;
 }
 
 export const categories: Category[] = [
@@ -45,6 +46,7 @@ export async function loadWorks(slug: string): Promise<Work[]> {
       title: item.alt || `作品 ${index + 1}`,
       category: slug,
       image: item.src,
+      full: (item as any).full || item.src,
     }));
   } catch {
     return [];
