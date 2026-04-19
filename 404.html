@@ -2,23 +2,17 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/juxin-portfolio/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="聚鑫时代图文广告 - 专业平面设计作品集" />
     <title>聚鑫时代图文广告</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <script>
-      // GitHub Pages 404 回退：将路径重写到 sessionStorage，跳转到首页后恢复路由
-      var pathSegmentsToKeep = 1; // 'juxin-portfolio'
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
+      var path = window.location.pathname;
+      var basename = '/juxin-portfolio';
+      if (path.indexOf(basename) === 0) {
+        path = path.substring(basename.length);
+      }
+      sessionStorage.redirect = path + window.location.search + window.location.hash;
+      window.location.replace(
+        window.location.protocol + '//' + window.location.host + basename + '/'
       );
     </script>
   </head>

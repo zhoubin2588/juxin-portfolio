@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet" />
     <script>
-      // GitHub Pages 404 回退 - 路径恢复
       (function() {
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
-        if (redirect && redirect != window.location.href) {
-          window.history.replaceState(null, null, redirect);
+        if (redirect) {
+          var basename = '/juxin-portfolio';
+          window.history.replaceState(null, null, basename + redirect);
         }
       })();
     </script>
