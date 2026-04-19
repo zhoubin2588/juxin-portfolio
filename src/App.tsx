@@ -5,9 +5,16 @@ import Home from './pages/Home';
 import Category from './pages/Category';
 import NotFound from './pages/NotFound';
 
+function getBasename() {
+  if (window.location.hostname === 'zhoubin2588.github.io') {
+    return '/juxin-portfolio';
+  }
+  return '';
+}
+
 export default function App() {
   return (
-    <BrowserRouter basename="/juxin-portfolio">
+    <BrowserRouter basename={getBasename()}>
       <div className="flex min-h-screen flex-col bg-bg">
         <Header />
         <div className="flex-1">
