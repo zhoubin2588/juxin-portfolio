@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "src": "/works/baozhuang/01.jpg",
+    "alt": "成功案例"
+  },
+  {
+    "src": "/works/baozhuang/02.jpg",
+    "alt": "成功案例"
+  },
+  {
+    "src": "/works/baozhuang/03.jpg",
+    "alt": "成功案例"
+  },
+  {
+    "src": "/works/baozhuang/04.jpg",
+    "alt": "成功案例"
+  }
+]
